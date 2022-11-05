@@ -1,0 +1,23 @@
+[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://xviaisp2wvyh"]
+
+[ext_resource type="Texture2D" uid="uid://dm6hhiv3gltdv" path="res://assets/bug/redback1.png" id="1_ot74h"]
+[ext_resource type="Texture2D" uid="uid://co5hmgxpcxhen" path="res://assets/bug/redback2.png" id="2_mnmao"]
+[ext_resource type="Texture2D" uid="uid://bet7a7jcmlxyw" path="res://assets/bug/redback3.png" id="3_evfdp"]
+[ext_resource type="Texture2D" uid="uid://dl7mmibw24rtv" path="res://assets/bug/redfront1.png" id="4_5bcxk"]
+[ext_resource type="Texture2D" uid="uid://bpoc2jj050fm6" path="res://assets/bug/redback4.png" id="4_heae1"]
+[ext_resource type="Texture2D" uid="uid://cyo5qc5wulexi" path="res://assets/bug/redfront2.png" id="5_aqyjd"]
+[ext_resource type="Texture2D" uid="uid://b3y25qqwnud4v" path="res://assets/bug/redfront3.png" id="6_dudnw"]
+[ext_resource type="Texture2D" uid="uid://dqjsokqs3rcwd" path="res://assets/bug/redfront4.png" id="8_hv4vu"]
+
+[resource]
+animations = [{
+"frames": [ExtResource("1_ot74h"), ExtResource("2_mnmao"), ExtResource("3_evfdp"), ExtResource("4_heae1")],
+"loop": true,
+"name": &"back",
+"speed": 18.0
+}, {
+"frames": [ExtResource("4_5bcxk"), ExtResource("5_aqyjd"), ExtResource("6_dudnw"), ExtResource("8_hv4vu")],
+"loop": true,
+"name": &"default",
+"speed": 18.0
+}]

@@ -1,0 +1,84 @@
+[gd_scene load_steps=7 format=3 uid="uid://cifm33joqm5y7"]
+
+[ext_resource type="Script" path="res://src/Menu.gd" id="1_qamq8"]
+[ext_resource type="PackedScene" uid="uid://cnyo4wtu8ehtb" path="res://src/level/Level3D.tscn" id="1_rm7ww"]
+[ext_resource type="Environment" uid="uid://dx80vb2fy2ghy" path="res://3d_env.tres" id="2_dvld5"]
+[ext_resource type="Theme" uid="uid://dko2m3piud8a5" path="res://default_theme.tres" id="3_nnc7d"]
+[ext_resource type="AudioStream" uid="uid://cnhys1jo3kt2q" path="res://assets/audio/Game Over.ogg" id="5_fjim4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eq6h5"]
+bg_color = Color(0.184314, 0, 0.34902, 0.454902)
+
+[node name="Menu" type="Node3D"]
+script = ExtResource("1_qamq8")
+
+[node name="Level3D" parent="." instance=ExtResource("1_rm7ww")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("2_dvld5")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.965926, 0.183013, 0.183013, -1.77636e-15, -0.707107, 0.707107, 0.258819, 0.683013, 0.683013, 4, 4, 4)
+
+[node name="MenuUI" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="MenuUI"]
+anchors_preset = -1
+anchor_left = 0.181
+anchor_top = 0.201
+anchor_right = 0.819
+anchor_bottom = 0.799
+offset_left = 0.487991
+offset_top = -0.248001
+offset_right = -0.488098
+offset_bottom = 0.247986
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+theme = ExtResource("3_nnc7d")
+theme_override_styles/panel = SubResource("StyleBoxFlat_eq6h5")
+
+[node name="Button" type="Button" parent="MenuUI/Panel"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 118.0
+offset_top = -19.0
+offset_right = 266.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start Game"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MenuUI/Panel"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -319.0
+offset_top = -137.0
+offset_right = -91.0
+offset_bottom = 79.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[b]Controls:[/b]
+
+[b]AWSD[/b] - move
+
+[b]Q[/b] - shoot
+
+[b]E[/b] - talk
+
+[b]R[/b] - shoot"
+scroll_active = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_fjim4")
+volume_db = -8.0
+autoplay = true
+
+[connection signal="pressed" from="MenuUI/Panel/Button" to="." method="_on_button_pressed"]

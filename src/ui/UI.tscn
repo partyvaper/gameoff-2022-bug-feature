@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://dv6cl0yvl6q1j"]
+
+[ext_resource type="Script" path="res://src/ui/UI.gd" id="1"]
+[ext_resource type="Theme" uid="uid://dko2m3piud8a5" path="res://default_theme.tres" id="5"]
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1")
+
+[node name="debug_text" type="Label" parent="."]
+visible = false
+theme = ExtResource("5")
+text = "debug_text"
+
+[node name="bugs" type="Label" parent="."]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -220.0
+offset_top = 32.0
+offset_right = -48.0
+offset_bottom = 58.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "0/30 Bugs Killed"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="bugs2" type="Label" parent="."]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -220.0
+offset_top = 64.0
+offset_right = -48.0
+offset_bottom = 90.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "0/15 Bugs Saved"
+horizontal_alignment = 2
+vertical_alignment = 1

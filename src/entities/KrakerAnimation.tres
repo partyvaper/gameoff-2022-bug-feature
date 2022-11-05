@@ -1,0 +1,20 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://b2xiw8avdvwl0"]
+
+[ext_resource type="Texture2D" uid="uid://bcl5p2qmgwrbq" path="res://assets/kraker/idle1.png" id="1_a344u"]
+[ext_resource type="Texture2D" uid="uid://12cf6nthvho7" path="res://assets/kraker/idle2.png" id="2_284pv"]
+[ext_resource type="Texture2D" uid="uid://dghublpv2nx5d" path="res://assets/kraker/idle3.png" id="3_ylspp"]
+[ext_resource type="Texture2D" uid="uid://d1a4uto1r50ol" path="res://assets/kraker/idle4.png" id="4_fx32x"]
+[ext_resource type="Texture2D" uid="uid://bvmhrm3sx4ia6" path="res://assets/kraker/idle5.png" id="5_nxy44"]
+
+[resource]
+animations = [{
+"frames": [ExtResource("1_a344u"), ExtResource("2_284pv"), ExtResource("3_ylspp"), ExtResource("4_fx32x"), ExtResource("5_nxy44")],
+"loop": true,
+"name": &"default",
+"speed": 18.0
+}, {
+"frames": [ExtResource("1_a344u"), ExtResource("2_284pv"), ExtResource("3_ylspp"), ExtResource("4_fx32x"), ExtResource("5_nxy44")],
+"loop": true,
+"name": &"idle",
+"speed": 18.0
+}]

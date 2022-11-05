@@ -1,0 +1,106 @@
+Join Kraker 3
+
+if {quest1} == "unstarted":
+
+	Kraker (default): Hey, glad to see you finally here!
+
+	Join Player 4
+
+	Player (default): Hey, what's going on here?
+
+	Kraker (default): Ahh, we have a small issue with bugs. They are kind of all over the place!
+
+	Player (default): Hmm, how did this happen?
+
+	Kraker (default): Well, there was an accident, someone overloaded the mainframe, it broke, and bugs broke out of it.
+
+	Player (default): All right, but what you need me for it?
+
+	Kraker (default): Oh, umm... Kill 10 bugs!
+
+	Player (default): Kill 10 bugs!?
+
+	Kraker (default): All right, all right... 20 bugs!?
+
+	- Okay!
+
+		Player (default): No, I want only 10 bugs now!
+
+		Kraker (default): Ha! Nope, that won't do, now its 30!
+
+	- No!
+
+		Player (default): Okay, fair enough..
+
+		Kraker (default): Ha! That's too easy, lets do 30!
+
+	Kraker (default): Good luck killing your 30 bugs!
+
+	Leave Kraker
+
+	Player (default): ...
+
+	Leave Player
+
+	[signal arg="quest_started"]
+
+	(Seems like I have accepted a quest to kill 30 bugs)
+
+elif {quest1} == "finished":
+
+	Join Player 4
+
+	Player (default): I did it! I killed them!
+
+	Join Kraker (default) 3
+
+	Kraker (default): Great, you made it! I actually never thought you will survive!
+
+	Player (default): Soo, what now?
+
+	Kraker (default): Seeing as you are so good at it... Kill more?
+
+	Player (default): ..
+
+	Kraker (default): ..?
+
+	Player (default): Aren't you gonna tell me who caused those bugs?
+
+	Kraker (default): Ah, well, umm, you see, only Ritz would know...
+
+	Player (default): Who's Ritz?
+
+	Kraker (default): More like - Where's Ritz? Ha!
+
+	Player (default): What?
+
+	Kraker (default): Nothing, nothing...
+
+	Player (default): All right, thanks for nothing, I guess...
+
+	Leave Player
+
+	Kraker (default): Good luck!
+
+	Leave Kraker
+
+else:
+
+	Join Kraker 3
+
+	Kraker (default): So, how is it going?
+
+	Join Player 4
+
+	Player (default): I have killed {bugs_killed} out of {bugs_to_kill}!
+
+	Kraker (default): Ha!
+
+	Leave Kraker
+
+	Player (default): ...
+
+	Leave Player
+
+[end_timeline]
+

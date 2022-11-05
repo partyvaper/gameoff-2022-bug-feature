@@ -1,0 +1,26 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+"color": Color(1, 0, 0, 1),
+"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": ""
+},
+"default_portrait": "default",
+"description": "He might know something!",
+"display_name": "Ritz",
+"mirror": false,
+"nicknames": ["Ritz", "The Bug Master"],
+"offset": Vector2(0, 0),
+"portraits": {
+"default": {
+"image": "res://assets/ritz/idle1.png",
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+"scale": 1.0
+}

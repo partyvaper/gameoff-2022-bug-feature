@@ -1,0 +1,220 @@
+[gd_scene load_steps=17 format=3 uid="uid://d38nkyh3t4gx7"]
+
+[ext_resource type="PackedScene" uid="uid://dv6cl0yvl6q1j" path="res://src/ui/UI.tscn" id="2_upcc0"]
+[ext_resource type="PackedScene" uid="uid://d1n0uhm8kkc6u" path="res://src/entities/Entity3D.tscn" id="5_oxjrm"]
+[ext_resource type="Script" path="res://src/Main.gd" id="6"]
+[ext_resource type="Script" path="res://src/entities/Player3D.gd" id="6_blll8"]
+[ext_resource type="SpriteFrames" uid="uid://160nwq6nk44a" path="res://src/entities/PlayerAnimation.tres" id="6_np0fe"]
+[ext_resource type="PackedScene" uid="uid://cnyo4wtu8ehtb" path="res://src/level/Level3D.tscn" id="7"]
+[ext_resource type="Script" path="res://src/entities/Npc3D.gd" id="7_pfmtt"]
+[ext_resource type="SpriteFrames" uid="uid://b2xiw8avdvwl0" path="res://src/entities/KrakerAnimation.tres" id="8_0ttwl"]
+[ext_resource type="SpriteFrames" uid="uid://fv8ogtxjpury" path="res://src/entities/RitzAnimation.tres" id="9_sn746"]
+[ext_resource type="SpriteFrames" uid="uid://xviaisp2wvyh" path="res://src/entities/BugAnimation.tres" id="10_g3muf"]
+[ext_resource type="Environment" uid="uid://dx80vb2fy2ghy" path="res://3d_env.tres" id="12_kq1aw"]
+[ext_resource type="Texture2D" uid="uid://bfmrwnuikxj7c" path="res://assets/bugs.png" id="12_woyjg"]
+[ext_resource type="AudioStream" uid="uid://ybpxaiqeuk35" path="res://assets/audio/ObservingTheStar.ogg" id="13_outoq"]
+
+[sub_resource type="Animation" id="Animation_082oe"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:z")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-2.5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_mlgxu"]
+resource_name = "bugsglow"
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:z")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-2.49, -0.25, 0, 0.25, 0, -2.45, -0.25, 0, 0.25, 0, -2.49, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5, 1)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ujxp6"]
+_data = {
+"RESET": SubResource("Animation_082oe"),
+"bugsglow": SubResource("Animation_mlgxu")
+}
+
+[node name="Main" type="Node"]
+script = ExtResource("6")
+
+[node name="UI" parent="." instance=ExtResource("2_upcc0")]
+
+[node name="Level3D" parent="." instance=ExtResource("7")]
+
+[node name="Player" parent="Level3D" instance=ExtResource("5_oxjrm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 1, 1)
+script = ExtResource("6_blll8")
+sprite_frames = ExtResource("6_np0fe")
+type = 0
+
+[node name="Kraker" parent="Level3D" instance=ExtResource("5_oxjrm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.1775, 0.999998, -0.362015)
+script = ExtResource("7_pfmtt")
+npc_title = "Kraker"
+wander_distance = 0
+sprite_frames = ExtResource("8_0ttwl")
+
+[node name="Ritz" parent="Level3D" instance=ExtResource("5_oxjrm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.0782, 1, 33.4692)
+script = ExtResource("7_pfmtt")
+npc_title = "Ritz"
+wander_distance = 0
+sprite_frames = ExtResource("9_sn746")
+
+[node name="Bug1" parent="Level3D" instance=ExtResource("5_oxjrm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 5, -29)
+script = ExtResource("7_pfmtt")
+npc_title = "Bug1"
+wander_distance = 4
+sprite_frames = ExtResource("10_g3muf")
+type = 2
+
+[node name="Bug2" parent="Level3D" instance=ExtResource("5_oxjrm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 5, -29)
+script = ExtResource("7_pfmtt")
+npc_title = "Bug2"
+wander_distance = 4
+sprite_frames = ExtResource("10_g3muf")
+type = 2
+
+[node name="Bug3" parent="Level3D" instance=ExtResource("5_oxjrm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 5, -16)
+script = ExtResource("7_pfmtt")
+npc_title = "Bug1"
+wander_distance = 4
+sprite_frames = ExtResource("10_g3muf")
+type = 2
+
+[node name="Bug4" parent="Level3D" instance=ExtResource("5_oxjrm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 5, -16)
+script = ExtResource("7_pfmtt")
+npc_title = "Bug1"
+wander_distance = 4
+sprite_frames = ExtResource("10_g3muf")
+type = 2
+
+[node name="Bug5" parent="Level3D" instance=ExtResource("5_oxjrm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 5, 5)
+script = ExtResource("7_pfmtt")
+npc_title = "Bug1"
+wander_distance = 4
+sprite_frames = ExtResource("10_g3muf")
+type = 2
+
+[node name="Bug6" parent="Level3D" instance=ExtResource("5_oxjrm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 5, -5)
+script = ExtResource("7_pfmtt")
+npc_title = "Bug1"
+wander_distance = 4
+sprite_frames = ExtResource("10_g3muf")
+type = 2
+
+[node name="Bug7" parent="Level3D" instance=ExtResource("5_oxjrm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43, 5, -5)
+script = ExtResource("7_pfmtt")
+npc_title = "Bug1"
+wander_distance = 4
+sprite_frames = ExtResource("10_g3muf")
+type = 2
+
+[node name="Bug8" parent="Level3D" instance=ExtResource("5_oxjrm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51, 5, 0)
+script = ExtResource("7_pfmtt")
+npc_title = "Bug1"
+wander_distance = 4
+sprite_frames = ExtResource("10_g3muf")
+type = 2
+
+[node name="Bug9" parent="Level3D" instance=ExtResource("5_oxjrm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51, 5, 6)
+script = ExtResource("7_pfmtt")
+npc_title = "Bug1"
+wander_distance = 4
+sprite_frames = ExtResource("10_g3muf")
+type = 2
+
+[node name="Bug10" parent="Level3D" instance=ExtResource("5_oxjrm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58, 5, 3)
+script = ExtResource("7_pfmtt")
+npc_title = "Bug1"
+wander_distance = 4
+sprite_frames = ExtResource("10_g3muf")
+type = 2
+
+[node name="Bug11" parent="Level3D" instance=ExtResource("5_oxjrm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63, 5, 9)
+script = ExtResource("7_pfmtt")
+npc_title = "Bug1"
+wander_distance = 4
+sprite_frames = ExtResource("10_g3muf")
+type = 2
+
+[node name="Bug12" parent="Level3D" instance=ExtResource("5_oxjrm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67, 5, -3)
+script = ExtResource("7_pfmtt")
+npc_title = "Bug1"
+wander_distance = 4
+sprite_frames = ExtResource("10_g3muf")
+type = 2
+
+[node name="Bug13" parent="Level3D" instance=ExtResource("5_oxjrm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76, 5, 5)
+script = ExtResource("7_pfmtt")
+npc_title = "Bug1"
+wander_distance = 4
+sprite_frames = ExtResource("10_g3muf")
+type = 2
+
+[node name="Bug14" parent="Level3D" instance=ExtResource("5_oxjrm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77, 5, 14)
+script = ExtResource("7_pfmtt")
+npc_title = "Bug1"
+wander_distance = 4
+sprite_frames = ExtResource("10_g3muf")
+type = 2
+
+[node name="Bug15" parent="Level3D" instance=ExtResource("5_oxjrm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85, 5, 15)
+script = ExtResource("7_pfmtt")
+npc_title = "Bug1"
+wander_distance = 4
+sprite_frames = ExtResource("10_g3muf")
+type = 2
+
+[node name="Decal" type="Decal" parent="Level3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -3, 0.5, -2.5)
+extents = Vector3(0.5, 0.5, 0.25)
+texture_albedo = ExtResource("12_woyjg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Level3D/Decal"]
+autoplay = "bugsglow"
+libraries = {
+"": SubResource("AnimationLibrary_ujxp6")
+}
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.651401, 0.548846, -0.523876, 0.286758, 0.46116, 0.839703, 0.702458, -0.697209, 0.143014, -5.11519, 7.52911, 9.68573)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("12_kq1aw")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_outoq")
+volume_db = -4.0
+autoplay = true

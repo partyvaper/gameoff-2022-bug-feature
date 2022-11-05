@@ -1,0 +1,20 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://fv8ogtxjpury"]
+
+[ext_resource type="Texture2D" uid="uid://djchl1t7gexcc" path="res://assets/ritz/idle1.png" id="1_o4h7i"]
+[ext_resource type="Texture2D" uid="uid://dm7kwmsdp80gg" path="res://assets/ritz/idle2.png" id="2_5o6ad"]
+[ext_resource type="Texture2D" uid="uid://brblv6c86wx8s" path="res://assets/ritz/idle3.png" id="3_0js8n"]
+[ext_resource type="Texture2D" uid="uid://cdmvkh0m572vb" path="res://assets/ritz/idle4.png" id="4_p3lnj"]
+[ext_resource type="Texture2D" uid="uid://4cply07fov8d" path="res://assets/ritz/idle5.png" id="5_xntle"]
+
+[resource]
+animations = [{
+"frames": [ExtResource("1_o4h7i"), ExtResource("2_5o6ad"), ExtResource("3_0js8n"), ExtResource("4_p3lnj"), ExtResource("5_xntle")],
+"loop": true,
+"name": &"default",
+"speed": 18.0
+}, {
+"frames": [ExtResource("1_o4h7i"), ExtResource("2_5o6ad"), ExtResource("3_0js8n"), ExtResource("4_p3lnj"), ExtResource("5_xntle")],
+"loop": true,
+"name": &"idle",
+"speed": 18.0
+}]

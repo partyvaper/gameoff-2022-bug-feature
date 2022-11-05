@@ -1,0 +1,120 @@
+Join Player (default) 4
+
+Join Ritz (default) 3
+
+if {quest2} == "inprogress":
+
+	Ritz (default): So, how is it going?
+
+	Player (default): I have saved {bugs_saved} out of {bugs_to_save}!
+
+	Ritz (default): Ha!
+
+	Leave Ritz
+
+	Player (default): ...
+
+	Leave Player
+
+	[end_timeline]
+
+elif {quest2} == "finished":
+
+	Ritz (default): You did it, you saved them!
+
+	Player (default): I guess I did?
+
+	Ritz (default): Nice work! Thank you! Bugs no more!
+
+	Leave Ritz
+
+	Player (default): Thanks, I think this is the end now..
+
+	Leave Player
+
+	Ritz: (Thanks for playing! - pv)
+
+	[end_timeline]
+
+if {secret} == "unset":
+
+	Player: Hey! Who are you?
+
+	Ritz: Ha! More like - Where am I?
+
+	Player (default): Where are you..?
+
+	Ritz (default): Heh, that's for another time. So, what are you doing here?
+
+	Player (default): Umm, not sure, I was killing bugs, then just walking around, are you Ritz by any chance?
+
+	Ritz (default): Well, you can see my name right? (Literally breaks fourth wall here)
+
+	Player (default): ..
+
+	Ritz (default): So, about those bugs, sorry, I kind of caused it. I was working on the mainframe, and they escaped my computer program. But, please, don't kill them! I need them back alive!
+
+	Player (default): Yea, about that... But, how can I not kill them?
+
+	Ritz (default): I can give you a "special main frame generic hacker reverse tool" to work with those bugs and return them back to me. But first I need you to go check the source code timeline and return to me with the meaning of life.
+
+	Player: (Its some kind of a secret password that comes from the source code)
+
+if {secret} != "FOURTWENTY420SIXTYNINE69":
+
+	Ritz (default): So?
+
+	[text_input text="The meaning of life:" var="secret"]
+
+	[signal arg="secret_entered"]
+
+	if {secret} == "FOURTWENTY420SIXTYNINE69":
+
+		Ritz (default): Ha! I knew you could do it!
+
+		Player (default): Cheeky... So, about that "super hacker whatever"?
+
+		Ritz (default): Ahh, yes, here it is! You can use it with "R".
+
+		Player: (Ritz hands you a weird magical chip)
+
+		Player (default): Thank you! So what now?
+
+		Ritz (default): So, you know the drill. Fix-up around 60 bugs and bring them to me!
+
+		Player (default): 60!? Are there really that many?
+
+		Ritz (default): No, wait, let me think.. Oh, it was around 30?
+
+		Player (default): Where have I seen this before...
+
+		Ritz (default): 15! Yes, I now remembered there are actually only 15!
+
+		Player (default): Ohh, okay, I'm on it!
+
+		(Seems like I have accepted a quest to bring back 15 bugs with my new tool)
+
+		[signal arg="quest_started2"]
+
+	else:
+
+		Ritz (default): Hey, did you really check it?
+
+		Player (default): Did I?
+
+		Ritz (default): ...
+
+else:
+
+	# This is kind of impossible state or something introduced by how Dialogic handles variable comparisons, reset secret
+
+	VAR {secret} = wrong
+
+	[jump]
+
+Leave Ritz
+
+Leave Player
+
+[end_timeline]
+
