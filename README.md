@@ -1,4 +1,4 @@
-# "It's not a Bug, it's a Feature?
+# "It's not a Bug, it's a Feature?"
 
 ["It's not a Bug, it's a Feature?"](https://partyvaper.itch.io/its-not-a-bug-its-a-feature) is a game jam [entry](https://itch.io/jam/game-off-2022/rate/1778937) for the [GitHub Game Off 2022 Game Jam](https://itch.io/jam/game-off-2022).
 
