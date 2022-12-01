@@ -1,8 +1,8 @@
 # "It's not a Bug, it's a Feature?
 
-["It's not a Bug, it's a Feature?"](https://partyvaper.itch.io/its-not-a-bug-its-a-feature) is a game jam [entry](https://itch.io) for the [GitHub Game Off 2022 Game Jam](https://itch.io/jam/game-off-2022).
+["It's not a Bug, it's a Feature?"](https://partyvaper.itch.io/its-not-a-bug-its-a-feature) is a game jam [entry](https://itch.io/jam/game-off-2022/rate/1778937) for the [GitHub Game Off 2022 Game Jam](https://itch.io/jam/game-off-2022).
 
-Game is made using [Godot 4 Beta ~7](https://github.com/godotengine/godot). (Yes, a beta!)
+Game is made using [Godot 4 Beta ~7](https://github.com/godotengine/godot). (Yes, a beta!) (Please note web performance might be poor, download binaries instead!)
 
 Some of my [other games](https://partyvaper.itch.io) that are mostly made using Godot 3.
 
